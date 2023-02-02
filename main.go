@@ -76,7 +76,7 @@ func main() {
 		driverRouter.POST("/", driverController.Register)
 		driverRouter.GET("/", driverController.GetProfile)
 		driverRouter.PUT("/", driverController.Update)
-		driverRouter.DELETE("/;id", driverController.Delete)
+		driverRouter.DELETE("/:id", driverController.Delete)
 	}
 
 	userRouter := r.Group("/user", middleware.AuthorizeJWTUser(jwtService))
